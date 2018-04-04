@@ -1,8 +1,6 @@
 import { Page } from './app.po';
-
 describe('App', () => {
   let page: Page;
-
   beforeEach(() => {
     page = new Page();
   });
@@ -12,10 +10,10 @@ describe('App', () => {
       page.navigateTo('/');
     });
 
-    it('should have a title saying Page One', () => {
-      page.getPageOneTitleText().then(title => {
-        expect(title).toEqual('Page One');
+    it('should have a title saying Home', () => {
+      page.getHomeTitleText().then(title => {
+        expect(title).toEqual('Home');
       });
     });
-  })
+  });
 });
