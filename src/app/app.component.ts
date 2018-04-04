@@ -15,13 +15,18 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(
+    public platform:
+    Platform, public statusBar:
+    StatusBar, public splashScreen:
+    SplashScreen) {
     this.initializeApp();
 
     this.pages = [
       { title: 'Home', component: HomePage }
     ];
 
+      this.contacts = [];
   }
 
   initializeApp() {
@@ -33,5 +38,6 @@ export class MyApp {
 
   openPage(page) {
     this.nav.setRoot(page.component);
+
   }
 }
