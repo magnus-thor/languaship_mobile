@@ -1,0 +1,8 @@
+{
+  "name": "languaship_mobile",
+  "app_id": "761b3c8f",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
