@@ -4,14 +4,29 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { SignupPage } from '../pages/signup/signup';
+import { LanguagesPage } from '../pages/languages/languages';
+import { ProfilePage } from '../pages/profile/profile';
+import { LoginPage } from '../pages/login/login';
+import { ChatPage } from '../pages/chat/chat';
+import { EditPage } from '../pages/edit/edit';
+import { LocationPage } from '../pages/location/location';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    SignupPage,
+    LoginPage,
+    ChatPage,
+    EditPage,
+    ProfilePage,
+    LocationPage,
+    LanguagesPage
   ],
   imports: [
     BrowserModule,
@@ -20,7 +35,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    SignupPage,
+    ProfilePage,
+    LocationPage,
+    LoginPage,
+    ChatPage,
+    EditPage,
+    LanguagesPage
   ],
   providers: [
     StatusBar,
