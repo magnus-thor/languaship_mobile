@@ -16,7 +16,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   declarations: [
     MyApp,
     HomePage,
-    SignupPage
+    SignupPage,
+    LanguagesPage,
+    ProfilePage
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     HomePage,
-    SignupPage
+    SignupPage,
+    LanguagesPage,
+    ProfilePage
   ],
   providers: [
     StatusBar,
