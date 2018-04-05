@@ -12,4 +12,19 @@
   <p>
     Welcome to Languaship!
   </p>
+
+  <ion-card>
+    <img src="http://cdn2.ubergizmo.com/wp-content/uploads/2016/02/homer-simpson.jpeg"/>
+    <ion-card-content>
+      <ion-card-title>
+        {{ user.attributes.name }}
+        </ion-card-title>
+      <p>
+        {{ user.attributes.city }}
+        {{ user.attributes.age }}
+        {{ user.attributes.languages.name }}
+      </p>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>
