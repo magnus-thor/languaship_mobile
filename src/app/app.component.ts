@@ -6,7 +6,6 @@ import { HomePage } from '../pages/home/home';
 import { SignupPage } from '../pages/signup/signup';
 import { ProfilePage } from '../pages/profile/profile';
 import { LocationPage } from '../pages/location/location';
-import { FeedPage } from '../pages/feed/feed';
 
 @Component({
   templateUrl: 'app.html'
@@ -26,8 +25,7 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'Signup', component: SignupPage },
       { title: 'Profile', component: ProfilePage },
-      { title: 'Location', component: LocationPage },
-      { title: 'Feed', component: FeedPage }
+      { title: 'Location', component: LocationPage }
     ];
 
   }
