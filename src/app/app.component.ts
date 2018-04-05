@@ -6,6 +6,7 @@ import { HomePage } from '../pages/home/home';
 import { SignupPage } from '../pages/signup/signup';
 import { LoginPage } from '../pages/login/login';
 import { ChatPage } from '../pages/chat/chat';
+import { EditPage } from '../pages/edit/edit';
 
 @Component({
   templateUrl: 'app.html'
@@ -24,7 +25,8 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'Signup', component: SignupPage },
       { title: 'Login', component: LoginPage },
-      { title: 'Chat', component: ChatPage}
+      { title: 'Chat', component: ChatPage },
+      { title: 'Edit', component: EditPage }
     ];
 
   }
