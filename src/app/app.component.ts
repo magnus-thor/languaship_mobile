@@ -22,7 +22,11 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(
+    public platform:
+    Platform, public statusBar:
+    StatusBar, public splashScreen:
+    SplashScreen) {
     this.initializeApp();
 
     this.pages = [
@@ -35,7 +39,6 @@ export class MyApp {
       { title: 'Chat', component: ChatPage },
       { title: 'Edit', component: EditPage }
     ];
-
   }
 
   initializeApp() {
@@ -47,5 +50,6 @@ export class MyApp {
 
   openPage(page) {
     this.nav.setRoot(page.component);
+
   }
 }
