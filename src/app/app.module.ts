@@ -8,6 +8,9 @@ import { SignupPage } from '../pages/signup/signup';
 import { LoginPage } from '../pages/login/login';
 import { ChatPage } from '../pages/chat/chat';
 import { EditPage } from '../pages/edit/edit';
+import { ProfilePage } from '../pages/profile/profile';
+import { LocationPage } from '../pages/location/location';
+import { FeedPage } from '../pages/feed/feed';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -20,7 +23,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SignupPage,
     LoginPage,
     ChatPage,
-    EditPage
+    EditPage,
+    ProfilePage,
+    LocationPage,
+    FeedPage
   ],
   imports: [
     BrowserModule,
@@ -31,6 +37,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     SignupPage,
+    ProfilePage,
+    LocationPage,
+    FeedPage,
     LoginPage,
     ChatPage,
     EditPage
