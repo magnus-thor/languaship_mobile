@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { FeedPage } from './feed';
+import { LanguagesPage } from './languages';
 
 @NgModule({
   declarations: [
-    FeedPage,
+    LanguagesPage,
   ],
   imports: [
-    IonicPageModule.forChild(FeedPage),
+    IonicPageModule.forChild(LanguagesPage),
   ],
 })
-export class FeedPageModule {}
+export class LanguagesPageModule {}

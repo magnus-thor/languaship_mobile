@@ -6,10 +6,10 @@ import { HomePage } from '../pages/home/home';
 import { SignupPage } from '../pages/signup/signup';
 import { ProfilePage } from '../pages/profile/profile';
 import { LocationPage } from '../pages/location/location';
-import { FeedPage } from '../pages/feed/feed';
 import { LoginPage } from '../pages/login/login';
 import { ChatPage } from '../pages/chat/chat';
 import { EditPage } from '../pages/edit/edit';
+import { LanguagesPage } from '../pages/languages/languages';
 
 @Component({
   templateUrl: 'app.html'
@@ -28,9 +28,9 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'Signup', component: SignupPage },
+      { title: 'Languages', component: LanguagesPage },
       { title: 'Profile', component: ProfilePage },
       { title: 'Location', component: LocationPage },
-      { title: 'Feed', component: FeedPage },
       { title: 'Login', component: LoginPage },
       { title: 'Chat', component: ChatPage },
       { title: 'Edit', component: EditPage }

@@ -5,12 +5,12 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { SignupPage } from '../pages/signup/signup';
+import { LanguagesPage } from '../pages/languages/languages';
+import { ProfilePage } from '../pages/profile/profile';
 import { LoginPage } from '../pages/login/login';
 import { ChatPage } from '../pages/chat/chat';
 import { EditPage } from '../pages/edit/edit';
-import { ProfilePage } from '../pages/profile/profile';
 import { LocationPage } from '../pages/location/location';
-import { FeedPage } from '../pages/feed/feed';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -26,7 +26,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     EditPage,
     ProfilePage,
     LocationPage,
-    FeedPage
+    LanguagesPage
   ],
   imports: [
     BrowserModule,
@@ -39,10 +39,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SignupPage,
     ProfilePage,
     LocationPage,
-    FeedPage,
     LoginPage,
     ChatPage,
-    EditPage
+    EditPage,
+    LanguagesPage
   ],
   providers: [
     StatusBar,
