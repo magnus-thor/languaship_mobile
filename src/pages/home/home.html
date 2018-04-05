@@ -9,22 +9,21 @@
 
 <ion-content padding>
 
-  <p>
+  <h1>
     Welcome to Languaship!
-  </p>
+  </h1>
 
-  <ion-card>
-    <img src="http://cdn2.ubergizmo.com/wp-content/uploads/2016/02/homer-simpson.jpeg"/>
-    <ion-card-content>
-      <ion-card-title>
-        {{ user.attributes.name }}
-        </ion-card-title>
-      <p>
-        {{ user.attributes.city }}
-        {{ user.attributes.age }}
-        {{ user.attributes.languages.name }}
-      </p>
-    </ion-card-content>
+  <ion-card *ngFor="let user of users">
+    <img src="{{ user.attributes.profileImage }}"/>
+      <ion-card-content>
+        <ion-card-title>
+          {{ user.attributes.name }}
+          </ion-card-title>
+        <p>
+          {{ user.attributes.city }}
+          {{ user.attributes.age }}
+          {{ user.attributes.languages.name }}
+        </p>
+      </ion-card-content>
   </ion-card>
-
 </ion-content>

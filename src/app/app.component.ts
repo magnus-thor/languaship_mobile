@@ -25,8 +25,6 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage }
     ];
-
-      this.contacts = [];
   }
 
   initializeApp() {
