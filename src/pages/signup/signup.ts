@@ -24,7 +24,5 @@ export class SignupPage {
     console.log('ionViewDidLoad SignupPage');
   }
 
-  dismissModal() {
-    this.viewCtrl.dismiss();
-  }
+  
 }

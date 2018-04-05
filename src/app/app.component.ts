@@ -11,6 +11,7 @@ import { FeedPage } from '../pages/feed/feed';
 @Component({
   templateUrl: 'app.html'
 })
+
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
