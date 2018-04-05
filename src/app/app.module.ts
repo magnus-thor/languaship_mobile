@@ -5,6 +5,8 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { SignupPage } from '../pages/signup/signup';
+import { LoginPage } from '../pages/login/login';
+import { ChatPage } from '../pages/chat/chat';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -14,7 +16,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   declarations: [
     MyApp,
     HomePage,
-    SignupPage
+    SignupPage,
+    LoginPage,
+    ChatPage
   ],
   imports: [
     BrowserModule,
@@ -24,7 +28,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     HomePage,
-    SignupPage
+    SignupPage,
+    LoginPage,
+    ChatPage
   ],
   providers: [
     StatusBar,
