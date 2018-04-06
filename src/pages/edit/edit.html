@@ -1,8 +1,53 @@
+<ion-header>
   <ion-navbar>
-    <ion-title>edit</ion-title>
+    <ion-title>Settings</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
   </ion-navbar>
+</ion-header>
 
 <ion-content padding>
+  <h1>LANGUASHIP</h1>
+  <h4>SETTINGS</h4>
+
+  <ion-item>
+      <ion-avatar item-start>
+        <img src="https://cdn.vox-cdn.com/thumbor/BonyZIgZli8GHGRlt9wNip1jssU=/0x100:607x505/1200x800/filters:focal(0x100:607x505)/cdn.vox-cdn.com/assets/3664725/Screen_Shot_2013-12-02_at_4.13.56_PM.png" style="height: 100px; width: 100px;">
+      </ion-avatar>
+      <h2>Darth vader</h2>
+      <p>Space, 45</p>
+        <br />
+      <ion-icon name="settings"></ion-icon>
+    </ion-item>
+
+
+  <ion-item>
+    <ion-label color="dark">Edit you name</ion-label>
+    <ion-input placeholder="Name input"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="dark">Edit you age</ion-label>
+    <ion-input placeholder="Age input"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="dark">Edit you location</ion-label>
+    <ion-input placeholder="Location input"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="dark" stacked>Change email</ion-label>
+    <ion-input type="email" placeholder="Email Input"></ion-input>
+  </ion-item>
+
+
+    <ion-item>
+      <ion-label color="dark" stacked>Change password</ion-label>
+      <ion-input type="password" placeholder="Password Input"></ion-input>
+    </ion-item>
+  <br />
   <ion-list>
     <ion-item>
       <ion-label>Gender</ion-label>
@@ -12,46 +57,3 @@
       </ion-select>
     </ion-item>
   </ion-list>
-  <ion-list>
-    <ion-item>
-      <ion-label>Languange I want to learn</ion-label>
-      <ion-select [(ngModel)]="languange">
-        <ion-option value="italian">Italian</ion-option>
-        <ion-option value="swedish">Swedish</ion-option>
-        <ion-option value="german">German</ion-option>
-        <ion-option value="french">French</ion-option>
-        <ion-option value="english">English</ion-option>
-        <ion-option value="spanish">Spanish</ion-option>
-        <ion-option value="finish">Finish</ion-option>
-        <ion-option value="other">Other</ion-option>
-      </ion-select>
-    </ion-item>
-  </ion-list>
-  <ion-list>
-    <ion-item>
-      <ion-label>Gender</ion-label>
-      <ion-select [(ngModel)]="gaming">
-        <ion-option value="female">Female</ion-option>
-        <ion-option value="male">Male</ion-option>
-      </ion-select>
-    </ion-item>
-  </ion-list>
-  <ion-list>
-    <ion-item>
-      <ion-label>Gender</ion-label>
-      <ion-select [(ngModel)]="gaming">
-        <ion-option value="female">Female</ion-option>
-        <ion-option value="male">Male</ion-option>
-      </ion-select>
-    </ion-item>
-  </ion-list>
-  <ion-list>
-    <ion-item>
-      <ion-label>Gender</ion-label>
-      <ion-select [(ngModel)]="gaming">
-        <ion-option value="female">Female</ion-option>
-        <ion-option value="male">Male</ion-option>
-      </ion-select>
-    </ion-item>
-  </ion-list>
-</ion-content>
