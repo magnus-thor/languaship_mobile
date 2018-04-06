@@ -6,7 +6,13 @@
 
 </ion-header>
 
-
 <ion-content padding>
-
-</ion-content>
+      <h1> Where are you based? </h1>
+      <h2> Your city: </h2>
+    <ion-select>
+      <ion-option *ngFor="let cc of locations" value="{{ cc }}">
+        <span class='flag-icon flag-icon-gb {{ cc.slice(0, -1) }}'></span>
+          {{ cc }}
+      </ion-option>
+    </ion-select>
+  </ion-content>
