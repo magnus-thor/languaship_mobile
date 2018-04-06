@@ -6,7 +6,41 @@
 
 </ion-header>
 
+<!-- <ion-content padding> -->
 
-<ion-content padding>
+  <ion-content>
+    <ion-list *ngFor="let location of locations">
+      <ion-item>
+        <img src="{{ locations.attributes.locationImage }}"/>
+        <h1> Where are you based? </h1>
+        <h2> Your city: </h2>
+        <h3>{{ location.attributes.name }}</h3>
+        <h3>{{ location.attributes. }}</h3>
+      </ion-item>
+    </ion-list>
+  </ion-content>
 
-</ion-content>
+
+  <!-- <h6>
+    Stockholm
+  </h6>
+  <h6>
+    Amsterdam
+  </h6>
+  <h6>
+    Paris
+  </h6> -->
+
+
+<!--
++  <ion-content>
++    <ion-list *ngFor="let chat of chats">
++      <ion-item>
++        <ion-avatar item-start>
++          <img src="{{ chat.attributes.profileImage }}">
++        </ion-avatar>
++        <h2>{{ chat.attributes.name }}</h2>
++        <h3>{{ chat.attributes.title }}</h3>
++        <p>{{ chat.attributes.snippet }}</p>
++      </ion-item>
++    </ion-list> -->
