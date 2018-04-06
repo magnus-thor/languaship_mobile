@@ -9,19 +9,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 export class LanguagesPage {
 
-  languages: any
+  constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-
-    this.languages =[
-          'ENGLISH',
-          'SPANISH',
-          'ITALIAN',
-          'DUTCH',
-          'SWEDISH',
-          'FRENCH'
-    ]
-  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad LanguagesPage');
     }
