@@ -9,16 +9,26 @@
 
 <ion-content padding>
 
-  <h6>
-    Please select your native language
-  </h6>
-  <img src="{ https://www.iconfinder.com/icons/96202/flag_netherlands_of_icon }"/>
+  <h1>
+    Please select your native language:
+    </h1>
+  <ion-select>
+    <ion-option *ngFor="let cc of languages" value="{{ cc }}">
+      <span class='flag-icon flag-icon-{{ cc.slice(0, -1) }}'></span>
+      {{ cc }}
+    </ion-option>
+  </ion-select>
 
 
-
-  <h6>
-    Please select the language you would like to learn
-  </h6>
+  <h1>
+    Please select the language you would like to learn:
+  </h1>
+  <ion-select>
+    <ion-option *ngFor="let cc of languages" value="{{ cc }}">
+      <span class='flag-icon flag-icon-{{ cc.slice(0, -1) }}'></span>
+      {{ cc }}
+    </ion-option>
+  </ion-select>
 
 </ion-content>
 
