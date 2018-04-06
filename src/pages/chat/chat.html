@@ -1,12 +1,20 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>chat</ion-title>
+    <ion-title>CHAT</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
-<ion-content padding>
-
+  <ion-content>
+    <ion-list *ngFor="let chat of chats">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="{{ chat.attributes.profileImage }}">
+        </ion-avatar>
+        <h2>{{ chat.attributes.name }}</h2>
+        <h3>{{ chat.attributes.title }}</h3>
+        <p>{{ chat.attributes.snippet }}</p>
+      </ion-item>
+    </ion-list>
 </ion-content>
