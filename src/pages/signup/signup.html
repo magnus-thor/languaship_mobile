@@ -23,7 +23,7 @@
           <span class="input-label">Password confirmation</span>
           <input type="password" placeholder="********">
         </label>
-        <button>SAVE</button>
+        <button>NEXT</button>
       </div>
     </ion-slide>
 
@@ -36,11 +36,12 @@
             {{ cc }}
         </ion-option>
       </ion-select>
+          <button>NEXT</button>
     </ion-slide>
 
     <ion-slide style="background-color: #3385ff">
       <h2>
-        Please select your native language:
+        What is your native language?
       </h2>
       <ion-item>
       <ion-select [(ngModel)]= 'nativeLanguage'>
@@ -52,7 +53,7 @@
     </ion-item>
 
       <h2>
-        Please select the language you would like to learn:
+        Which language do you want to learn?
       </h2>
       <ion-item>
         <ion-select [(ngModel)]= 'learnLanguage'>
@@ -62,25 +63,26 @@
         </ion-option>
       </ion-select>
     </ion-item>
+        <button>NEXT</button>
     </ion-slide>
 
     <ion-slide style="background-color: #3385ff">
-      <h2>What age range do you prefer?</h2>
+      <h2>What's your age?</h2>
       <ion-range min="18" max="99" [(ngModel)]="age" color="secondary">
         <ion-label range-left>18</ion-label>
         <ion-label range-right>99</ion-label>
       </ion-range>
 
-      <h2>What age range do you prefer?</h2>
+      <h2>And gender?</h2>
         <ion-list>
           <ion-item>
-            <ion-label>Gender</ion-label>
             <ion-select [(ngModel)]="gender">
               <ion-option value="female">Female</ion-option>
               <ion-option value="male">Male</ion-option>
             </ion-select>
           </ion-item>
         </ion-list>
+            <button>DONE!</button>
       </ion-slide>
   </ion-slides>
 </ion-content>
