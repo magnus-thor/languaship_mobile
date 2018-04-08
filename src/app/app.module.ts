@@ -9,7 +9,7 @@ import { LanguagesPage } from '../pages/languages/languages';
 import { ProfilePage } from '../pages/profile/profile';
 import { LoginPage } from '../pages/login/login';
 import { ChatPage } from '../pages/chat/chat';
-import { EditPage } from '../pages/edit/edit';
+import { SettingsPage } from '../pages/settings/settings';
 import { LocationPage } from '../pages/location/location';
 
 
@@ -25,7 +25,7 @@ import { UsersProvider } from '../providers/users/users';
     SignupPage,
     LoginPage,
     ChatPage,
-    EditPage,
+    SettingsPage,
     ProfilePage,
     LocationPage,
     LanguagesPage
@@ -43,7 +43,7 @@ import { UsersProvider } from '../providers/users/users';
     LocationPage,
     LoginPage,
     ChatPage,
-    EditPage,
+    SettingsPage,
     LanguagesPage
   ],
   providers: [

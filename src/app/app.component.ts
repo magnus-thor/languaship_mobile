@@ -8,7 +8,7 @@ import { ProfilePage } from '../pages/profile/profile';
 import { LocationPage } from '../pages/location/location';
 import { LoginPage } from '../pages/login/login';
 import { ChatPage } from '../pages/chat/chat';
-import { EditPage } from '../pages/edit/edit';
+import { SettingsPage } from '../pages/settings/settings';
 import { LanguagesPage } from '../pages/languages/languages';
 
 @Component({
@@ -37,7 +37,7 @@ export class MyApp {
       { title: 'Location', component: LocationPage },
       { title: 'Login', component: LoginPage },
       { title: 'Chat', component: ChatPage },
-      { title: 'Edit', component: EditPage }
+      { title: 'Settings', component: SettingsPage }
     ];
   }
 
