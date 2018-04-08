@@ -1,32 +1,86 @@
 <ion-header>
-
   <ion-navbar>
     <ion-title>SIGN UP</ion-title>
   </ion-navbar>
-
 </ion-header>
 
-<ion-content padding>
-  <h1>LANGUASHIP</h1>
-  <h4>CREATE A NEW ACCOUNT</h4>
+<ion-content>
+  <ion-slides pager>
 
-  <div class="list">
-    <label class="item item-input item-stacked-label">
-      <span class="input-label">Email</span>
-      <input type="text" placeholder="isabelle@mail.com">
-    </label>
-    <label class="item item-input item-stacked-label">
-      <span class="input-label">Password</span>
-      <input type="text" placeholder="********">
-    </label>
-    <label class="item item-input item-stacked-label">
-      <span class="input-label">Password confirmation</span>
-      <input type="text" placeholder="********">
-    </label>
-  </div>
+    <ion-slide style="background-color: #3385ff">
+      <h2>LANGUASHIP</h2>
+      <h4>CREATE A NEW ACCOUNT</h4>
+      <div class="list">
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Email</span>
+          <input type="text" placeholder="isabelle@mail.com">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Password</span>
+          <input type="password" placeholder="********">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Password confirmation</span>
+          <input type="password" placeholder="********">
+        </label>
+        <button>SAVE</button>
+      </div>
+    </ion-slide>
 
-  <button class="button button-block button-calm">
-    Log In
-  </button>
+    <ion-slide style="background-color: #3385ff">
+        <h2> Where are you based? </h2>
+        <h4> Your city: </h4>
+      <ion-select>
+        <ion-option *ngFor="let cc of locations" value="{{ cc }}">
+          <span class='flag-icon flag-icon-gb {{ cc.slice(0, -1) }}'></span>
+            {{ cc }}
+        </ion-option>
+      </ion-select>
+    </ion-slide>
 
+    <ion-slide style="background-color: #3385ff">
+      <h2>
+        Please select your native language:
+      </h2>
+      <ion-item>
+      <ion-select [(ngModel)]= 'nativeLanguage'>
+        <ion-option *ngFor="let ciao of languages" value="{{ ciao }}">
+          <span class='flag-icon flag-icon-gb {{ ciao.slice(0, -1) }}'></span>
+            {{ ciao }}
+        </ion-option>
+      </ion-select>
+    </ion-item>
+
+      <h2>
+        Please select the language you would like to learn:
+      </h2>
+      <ion-item>
+        <ion-select [(ngModel)]= 'learnLanguage'>
+        <ion-option *ngFor="let cc of learnings" value="{{ cc }}">
+          <span class='flag-icon flag-icon-{{ cc.slice(0, -1) }}'></span>
+          {{ cc }}
+        </ion-option>
+      </ion-select>
+    </ion-item>
+    </ion-slide>
+
+    <ion-slide style="background-color: #3385ff">
+      <h2>What age range do you prefer?</h2>
+      <ion-range min="18" max="99" [(ngModel)]="age" color="secondary">
+        <ion-label range-left>18</ion-label>
+        <ion-label range-right>99</ion-label>
+      </ion-range>
+
+      <h2>What age range do you prefer?</h2>
+        <ion-list>
+          <ion-item>
+            <ion-label>Gender</ion-label>
+            <ion-select [(ngModel)]="gender">
+              <ion-option value="female">Female</ion-option>
+              <ion-option value="male">Male</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+      </ion-slide>
+  </ion-slides>
 </ion-content>

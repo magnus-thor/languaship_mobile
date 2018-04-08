@@ -18,7 +18,7 @@ import { LanguagesPage } from '../pages/languages/languages';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = SignupPage;
 
   pages: Array<{title: string, component: any}>;
 
