@@ -5,11 +5,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { SignupPage } from '../pages/signup/signup';
 import { ProfilePage } from '../pages/profile/profile';
-import { LocationPage } from '../pages/location/location';
 import { LoginPage } from '../pages/login/login';
 import { ChatPage } from '../pages/chat/chat';
 import { SettingsPage } from '../pages/settings/settings';
-import { LanguagesPage } from '../pages/languages/languages';
 import { Angular2TokenService } from 'angular2-token';
 
 @Component({
@@ -19,7 +17,7 @@ import { Angular2TokenService } from 'angular2-token';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = SignupPage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -39,9 +37,7 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'Signup', component: SignupPage },
-      { title: 'Languages', component: LanguagesPage },
       { title: 'Profile', component: ProfilePage },
-      { title: 'Location', component: LocationPage },
       { title: 'Login', component: LoginPage },
       { title: 'Chat', component: ChatPage },
       { title: 'Settings', component: SettingsPage }

@@ -2,5 +2,8 @@
 .list-ios >
 .item-wrapper:last-child .item-block {
     border-bottom: 0;
-    padding-left: 0%;
+}
+
+.item-ios h2 {
+    text-align: left;
 }
