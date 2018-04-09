@@ -7,8 +7,7 @@
 <ion-content>
   <ion-slides pager>
 
-    <ion-slide style="background-color: #3385ff">
-      <h2>LANGUASHIP</h2>
+    <ion-slide style="background-color:white">
       <h4>CREATE A NEW ACCOUNT</h4>
       <div class="list">
         <label class="item item-input item-stacked-label">
@@ -27,7 +26,7 @@
       </div>
     </ion-slide>
 
-    <ion-slide style="background-color: #3385ff">
+    <ion-slide style="background-color:white;">
         <h2> Where are you based? </h2>
         <h4> Your city: </h4>
       <ion-select>
@@ -39,10 +38,10 @@
           <button>NEXT</button>
     </ion-slide>
 
-    <ion-slide style="background-color: #3385ff">
-      <h2>
+    <ion-slide style="background-color:white;">
+      <h4>
         What is your native language?
-      </h2>
+      </h4>
       <ion-item>
       <ion-select [(ngModel)]= 'nativeLanguage'>
         <ion-option *ngFor="let ciao of languages" value="{{ ciao }}">
@@ -52,9 +51,9 @@
       </ion-select>
     </ion-item>
 
-      <h2>
+      <h4>
         Which language do you want to learn?
-      </h2>
+      </h4>
       <ion-item>
         <ion-select [(ngModel)]= 'learnLanguage'>
         <ion-option *ngFor="let cc of learnings" value="{{ cc }}">
@@ -66,14 +65,14 @@
         <button>NEXT</button>
     </ion-slide>
 
-    <ion-slide style="background-color: #3385ff">
-      <h2>What's your age?</h2>
+    <ion-slide style="background-color:white;">
+      <h4>What's your age?</h4>
       <ion-range min="18" max="99" [(ngModel)]="age" color="secondary">
         <ion-label range-left>18</ion-label>
         <ion-label range-right>99</ion-label>
       </ion-range>
 
-      <h2>And gender?</h2>
+      <h4>And gender?</h4>
         <ion-list>
           <ion-item>
             <ion-select [(ngModel)]="gender">
