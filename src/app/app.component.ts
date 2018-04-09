@@ -10,6 +10,7 @@ import { LoginPage } from '../pages/login/login';
 import { ChatPage } from '../pages/chat/chat';
 import { SettingsPage } from '../pages/settings/settings';
 import { LanguagesPage } from '../pages/languages/languages';
+import { Angular2TokenService } from 'angular2-token';
 
 @Component({
   templateUrl: 'app.html'
@@ -26,7 +27,13 @@ export class MyApp {
     public platform:
     Platform, public statusBar:
     StatusBar, public splashScreen:
-    SplashScreen) {
+    SplashScreen,
+    private _tokenService: Angular2TokenService
+  ) {
+    this._tokenService.init({
+    apiBase: 'https://https://languaship.herokuapp.com/api/v1/user'
+  });
+
     this.initializeApp();
 
     this.pages = [
