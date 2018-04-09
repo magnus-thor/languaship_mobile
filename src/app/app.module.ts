@@ -5,16 +5,12 @@ import { RouterModule } from '@angular/router';
 import { Angular2TokenService } from 'angular2-token';
 import { HttpModule } from '@angular/http';
 
-
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { SignupPage } from '../pages/signup/signup';
 import { ProfilePage } from '../pages/profile/profile';
-import { LoginPage } from '../pages/login/login';
 import { ChatPage } from '../pages/chat/chat';
 import { SettingsPage } from '../pages/settings/settings';
-
-
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -26,7 +22,6 @@ import { UsersProvider } from '../providers/users/users';
     MyApp,
     HomePage,
     SignupPage,
-    LoginPage,
     ChatPage,
     SettingsPage,
     ProfilePage
@@ -43,7 +38,6 @@ import { UsersProvider } from '../providers/users/users';
     HomePage,
     SignupPage,
     ProfilePage,
-    LoginPage,
     ChatPage,
     SettingsPage
   ],
@@ -52,7 +46,7 @@ import { UsersProvider } from '../providers/users/users';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UsersProvider,
-    Angular2TokenService 
+    Angular2TokenService
   ]
 })
 export class AppModule {}
