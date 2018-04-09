@@ -68,7 +68,6 @@
       <button ion-button color="next" round>NEXT</button>
     </p>
     </ion-slide>
-
     <ion-slide style="background-color:white;">
       <h4>What's your age?</h4>
       <ion-range min="18" max="99" [(ngModel)]="age" color="secondary">
@@ -78,10 +77,12 @@
 
       <h4>And gender?</h4>
         <ion-list>
+          <ion-item>
             <ion-select [(ngModel)]="gender">
               <ion-option value="female">Female</ion-option>
               <ion-option value="male">Male</ion-option>
             </ion-select>
+            </ion-item>
         </ion-list>
         <button ion-button color="next" round>DONE!</button>
       </ion-slide>
