@@ -111,40 +111,6 @@ export class SignupPage {
     confirm.present();
   }
 
-  loginPopUp() {
-      console.log('popup');
-      let confirm = this.alertCtrl.create({
-
-        title: 'Login',
-        inputs: [
-          {
-            name: 'email',
-            placeholder: 'email'
-          },
-          {
-            name: 'password',
-            placeholder: 'password',
-            type: 'password'
-          }
-        ],
-        buttons: [
-          {
-            text: 'Cancel',
-            handler: data => {
-              console.log('Cancel clicked');
-            }
-          },
-          {
-            text: 'Login',
-            handler: data => {
-              this.login(data);
-            }
-          }
-        ]
-      });
-      confirm.present();
-    }
-
   register(credentials) {
     this._tokenService
       .registerAccount(credentials)
@@ -152,21 +118,5 @@ export class SignupPage {
         res => (this.currentUser = res.json().data),
         err => console.error('error')
       );
-  }
-
-  login(credentials) {
-    this._tokenService
-      .signIn(credentials)
-      .subscribe(
-        res => (this.currentUser = res.json().data),
-        err => console.error('error')
-      );
-  }
-
-  logout() {
-    this._tokenService
-      .signOut()
-      .subscribe(res => console.log(res), err => console.error('error'));
-    this.currentUser = undefined;
   }
 }

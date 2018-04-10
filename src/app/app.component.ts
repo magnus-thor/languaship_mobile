@@ -95,7 +95,14 @@ export class MyApp {
     this._tokenService
       .signIn(credentials)
       .subscribe(
-        res => (this.currentUser = res.json().data),
+        res => {
+          (this.currentUser = res.json().data);
+          let alert = this.alertCtrl.create({
+            title: 'Successful Login',
+            buttons: ['OK']
+          });
+          alert.present();
+        },
         err => console.error('error')
       );
   }
