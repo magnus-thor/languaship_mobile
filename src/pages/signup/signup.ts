@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { Component, ViewChild  } from '@angular/core';
+import { IonicPage, NavController, NavParams, ViewController, Nav } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { Angular2TokenService } from 'angular2-token';
 
@@ -9,12 +9,14 @@ import { Angular2TokenService } from 'angular2-token';
   templateUrl: 'signup.html',
 })
 export class SignupPage {
+  @ViewChild(Nav) nav: Nav;
 
   locations: any
   languages: any
   learnings: any
   nativeLanguage: any
   learnLanguage: any
+  pages: Array<{title: string, component: any}>;
   currentUser: any
 
   constructor(
@@ -109,6 +111,40 @@ export class SignupPage {
     confirm.present();
   }
 
+  loginPopUp() {
+      console.log('popup');
+      let confirm = this.alertCtrl.create({
+
+        title: 'Login',
+        inputs: [
+          {
+            name: 'email',
+            placeholder: 'email'
+          },
+          {
+            name: 'password',
+            placeholder: 'password',
+            type: 'password'
+          }
+        ],
+        buttons: [
+          {
+            text: 'Cancel',
+            handler: data => {
+              console.log('Cancel clicked');
+            }
+          },
+          {
+            text: 'Login',
+            handler: data => {
+              this.login(data);
+            }
+          }
+        ]
+      });
+      confirm.present();
+    }
+
   register(credentials) {
     this._tokenService
       .registerAccount(credentials)
@@ -119,7 +155,6 @@ export class SignupPage {
   }
 
   login(credentials) {
-    console.log('signup successful')
     this._tokenService
       .signIn(credentials)
       .subscribe(
