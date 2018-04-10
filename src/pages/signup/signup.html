@@ -11,7 +11,9 @@
   <ion-slides pager>
     <ion-slide style="background-color:white">
       <h4>CREATE A NEW ACCOUNT</h4>
-      <div class="list">
+      <!-- <button ion-item >
+      </button> -->
+      <!-- <div class="list">
         <label class="item item-input item-stacked-label">
           <span class="input-label">Email</span>
           <input type="text" placeholder="isabelle@mail.com">
@@ -23,11 +25,10 @@
         <label class="item item-input item-stacked-label">
           <span class="input-label">Password confirmation</span>
           <input type="password" placeholder="********">
-        </label>
+        </label> -->
       <p>
-        <button ion-button color="next" round>NEXT</button>
+        <button ion-button (click)="registerAccountPopUp()" *ngIf="!currentUser" color="next" round>NEXT</button>
       </p>
-      </div>
     </ion-slide>
 
     <ion-slide style="background-color:white;">

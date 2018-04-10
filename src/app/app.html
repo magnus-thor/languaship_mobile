@@ -10,9 +10,9 @@
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
       </button>
-      <button ion-item (click)="registerAccountPopUp()" *ngIf="!currentUser" >
+      <!-- <button ion-item (click)="registerAccountPopUp()" *ngIf="!currentUser">
         Signup
-      </button>
+      </button> -->
       <button ion-item (click)="loginPopUp()" *ngIf="!currentUser">
         Login
       </button>

@@ -29,8 +29,9 @@ export class MyApp {
     private _tokenService: Angular2TokenService,
     private alertCtrl: AlertController
   ) {
+
     this._tokenService.init({
-    apiBase: 'https://https://languaship.herokuapp.com/api/v1/user'
+      apiBase: 'https://languaship.herokuapp.com/api/v1'
   });
 
     this.initializeApp();
@@ -49,11 +50,6 @@ export class MyApp {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
-  }
-
-  openPage(page) {
-    this.nav.setRoot(page.component);
-
   }
 
   registerAccountPopUp(){
