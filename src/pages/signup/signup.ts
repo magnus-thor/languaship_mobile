@@ -57,9 +57,9 @@ export class SignupPage {
     console.log('ionViewDidLoad SignupPage');
   }
 
-  // openPage(page) {
-  //   this.nav.setRoot(page.component);
-  // }
+  showPage(page) {
+    this.nav.setRoot(page.component);
+  }
 
   showAlert() {
   let alert = this.alertCtrl.create({
@@ -119,11 +119,19 @@ export class SignupPage {
   }
 
   login(credentials) {
+    console.log('signup successful')
     this._tokenService
       .signIn(credentials)
       .subscribe(
         res => (this.currentUser = res.json().data),
         err => console.error('error')
       );
+  }
+
+  logout() {
+    this._tokenService
+      .signOut()
+      .subscribe(res => console.log(res), err => console.error('error'));
+    this.currentUser = undefined;
   }
 }

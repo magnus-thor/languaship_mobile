@@ -52,48 +52,10 @@ export class MyApp {
     });
   }
 
-  openPage(page) {
+  showPage(page) {
     this.nav.setRoot(page.component);
   }
 
-  registerAccountPopUp(){
-    console.log('popup');
-    let confirm = this.alertCtrl.create({
-      title: 'Signup',
-      inputs: [
-        {
-          name: 'email',
-          placeholder: 'email'
-        },
-        {
-          name: 'password',
-          placeholder: 'password',
-          type: 'password'
-        },
-        {
-          name: 'passwordConformation',
-          placeholder: 'password',
-          type: 'password'
-        }
-      ],
-      buttons: [
-        {
-          text: 'Cancel',
-          handler: data => {
-            console.log('Cancel clicked');
-          }
-        },
-        {
-          text: 'Signup',
-          handler: data => {
-            this.register(data);
-            // this.login(data);
-          }
-        }
-      ]
-    });
-    confirm.present();
-  }
 
   loginPopUp() {
     console.log('popup');
@@ -127,15 +89,6 @@ export class MyApp {
       ]
     });
     confirm.present();
-  }
-
-  register(credentials) {
-    this._tokenService
-      .registerAccount(credentials)
-      .subscribe(
-        res => console.log(res),
-        err => console.error('error')
-      );
   }
 
   login(credentials) {
