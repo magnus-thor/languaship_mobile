@@ -52,6 +52,10 @@ export class MyApp {
     });
   }
 
+  openPage(page) {
+    this.nav.setRoot(page.component);
+  }
+
   registerAccountPopUp(){
     console.log('popup');
     let confirm = this.alertCtrl.create({
@@ -83,7 +87,7 @@ export class MyApp {
           text: 'Signup',
           handler: data => {
             this.register(data);
-            this.login(data);
+            // this.login(data);
           }
         }
       ]
