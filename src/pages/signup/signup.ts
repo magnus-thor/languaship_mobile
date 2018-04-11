@@ -2,6 +2,10 @@ import { Component, ViewChild  } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, Nav, Events, Slides } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { Angular2TokenService } from 'angular2-token';
+// import { Storage } from '@ionic/storage'
+
+import { HomePage } from '../home/home'
+
 
 @IonicPage()
 @Component({
@@ -27,6 +31,7 @@ export class SignupPage {
     private _tokenService: Angular2TokenService,
     private alertCtrl: AlertController,
     private event: Events
+    // public storage: Storage
   ) {
 
       this.locations = [
@@ -36,7 +41,7 @@ export class SignupPage {
               'ZURICH',
               'ROME',
               'AMSTERDAM'
-        ]
+        ];
 
       this.languages = [
             'ENGLISH',
@@ -45,7 +50,7 @@ export class SignupPage {
             'DUTCH',
             'SWEDISH',
             'FRENCH'
-      ]
+      ];
 
       this.learnings = [
             'ENGLISH',
@@ -120,9 +125,18 @@ export class SignupPage {
           (this.currentUser = res.json().data)
           this.showAlert();
           this.event.publish('userSignedUp', this.currentUser);
+          // this.storage.set('signedUp', true);
           this.slides.slideTo(1, 500);        },
         err => console.error('error')
       );
   }
+
+
+  // Function that gets run when user presses done
+
+  goToHome() {
+    this.navCtrl.setRoot(HomePage);
+  }
+
 
 }
