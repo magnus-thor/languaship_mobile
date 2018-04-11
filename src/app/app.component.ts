@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform, Events } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
@@ -27,12 +27,17 @@ export class MyApp {
     StatusBar, public splashScreen:
     SplashScreen,
     private _tokenService: Angular2TokenService,
-    private alertCtrl: AlertController
+    private alertCtrl: AlertController,
+    private event: Events
   ) {
 
     this._tokenService.init({
       apiBase: 'https://languaship.herokuapp.com/api/v1'
   });
+
+    this.event.subscribe('userSignedUp', (user) => {
+      this.currentUser = user;
+    })
 
     this.initializeApp();
 
