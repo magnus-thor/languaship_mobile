@@ -29,7 +29,6 @@ export class MyApp {
     Platform, public statusBar:
     StatusBar, public splashScreen:
     SplashScreen,
-    // public storage: Storage,
     public loadingCtrl: LoadingController,
     private _tokenService: Angular2TokenService,
     private alertCtrl: AlertController,
@@ -48,7 +47,7 @@ export class MyApp {
 
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'Signup', component: SignupPage },
+      // { title: 'Signup', component: SignupPage },
       { title: 'Profile', component: ProfilePage },
       { title: 'Chat', component: ChatPage },
       { title: 'Settings', component: SettingsPage }
@@ -56,21 +55,9 @@ export class MyApp {
   }
 
   initializeApp() {
-    // this.presentLoading();
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      // this.storage.get('signedUp').then((result) => {
-      //
-      //   if(result){
-      //     this.rootPage = 'HomePage';
-      //   } else {
-      //     this.rootPage = 'SignupPage';
-      //   }
-      //
-      //   this.loader.dismiss();
-      //
-      // });
     });
   }
 

@@ -6,7 +6,6 @@ import { Injectable } from '@angular/core';
 export class UsersProvider {
 
   constructor() {
-    // console.log('Hello UsersProvider Provider');
   }
 
   getAll() {
