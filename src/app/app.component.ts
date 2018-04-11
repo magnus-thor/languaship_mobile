@@ -9,6 +9,7 @@ import { ChatPage } from '../pages/chat/chat';
 import { SettingsPage } from '../pages/settings/settings';
 import { Angular2TokenService } from 'angular2-token';
 import { AlertController } from 'ionic-angular';
+import { LoadingController } from "ionic-angular";
 
 @Component({
   templateUrl: 'app.html'
@@ -17,8 +18,9 @@ import { AlertController } from 'ionic-angular';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = SignupPage;
   currentUser: any;
+  loader: any;
   pages: Array<{title: string, component: any}>;
 
 
@@ -27,6 +29,8 @@ export class MyApp {
     Platform, public statusBar:
     StatusBar, public splashScreen:
     SplashScreen,
+    // public storage: Storage,
+    public loadingCtrl: LoadingController,
     private _tokenService: Angular2TokenService,
     private alertCtrl: AlertController,
     private event: Events
@@ -38,7 +42,7 @@ export class MyApp {
 
     this.event.subscribe('userSignedUp', (user) => {
       this.currentUser = user;
-    })
+    });
 
     this.initializeApp();
 
@@ -52,14 +56,34 @@ export class MyApp {
   }
 
   initializeApp() {
+    // this.presentLoading();
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      // this.storage.get('signedUp').then((result) => {
+      //
+      //   if(result){
+      //     this.rootPage = 'HomePage';
+      //   } else {
+      //     this.rootPage = 'SignupPage';
+      //   }
+      //
+      //   this.loader.dismiss();
+      //
+      // });
     });
   }
 
   showPage(page) {
     this.nav.setRoot(page.component);
+  }
+
+  presentLoading() {
+    this.loader = this.loadingCtrl.create({
+      content: "Authenticating..."
+    });
+
+    this.loader.present();
   }
 
 

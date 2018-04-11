@@ -4,6 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { RouterModule } from '@angular/router';
 import { Angular2TokenService } from 'angular2-token';
 import { HttpModule } from '@angular/http';
+// import { IonicStorageModule } from '@ionic/storage';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -29,6 +30,7 @@ import { UsersProvider } from '../providers/users/users';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    // IonicStorageModule.forRoot(),
     HttpModule,
     RouterModule
   ],
