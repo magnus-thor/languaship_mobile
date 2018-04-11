@@ -1,28 +1,20 @@
 <ion-header>
   <ion-navbar>
     <ion-title>SIGN UP</ion-title>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
   </ion-navbar>
-
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <img src="assets/imgs/logo.png"/>
-  </ion-card>
-  <ion-slides pager>
+  <ion-slides pager="true">
     <ion-slide style="background-color:white">
       <h4>CREATE A NEW ACCOUNT</h4>
       <p>
-        <button ion-button (click)="registerAccountPopUp()" *ngIf="!currentUser" color="next" round>NEXT</button>
+        <button ion-button (click)="registerAccountPopUp()" *ngIf="!currentUser" color="next" round>SIGN UP</button>
       </p>
     </ion-slide>
 
     <ion-slide style="background-color:white;">
         <h2>Where are you based?</h2>
-
       <ion-select>
         <ion-option *ngFor="let cc of locations" value="{{ cc }}">
           <span class='flag-icon flag-icon-gb {{ cc.slice(0, -1) }}'></span>
@@ -30,7 +22,7 @@
         </ion-option>
       </ion-select>
       <p>
-        <button ion-button color="next" round>NEXT</button>
+        <button ion-button button color="next" round>NEXT</button>
       </p>
     </ion-slide>
 

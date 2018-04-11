@@ -1,5 +1,5 @@
 import { Component, ViewChild  } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController, Nav } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, Nav, Events, Slides } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { Angular2TokenService } from 'angular2-token';
 
@@ -8,8 +8,10 @@ import { Angular2TokenService } from 'angular2-token';
   selector: 'page-signup',
   templateUrl: 'signup.html',
 })
+
 export class SignupPage {
   @ViewChild(Nav) nav: Nav;
+  @ViewChild(Slides) slides: Slides;
 
   locations: any
   languages: any
@@ -24,7 +26,8 @@ export class SignupPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     private _tokenService: Angular2TokenService,
-    private alertCtrl: AlertController
+    private alertCtrl: AlertController,
+    private event: Events
   ) {
 
       this.locations = [
@@ -103,7 +106,6 @@ export class SignupPage {
           text: 'Signup',
           handler: data => {
             this.register(data);
-            this.login(data);
           }
         }
       ]
@@ -115,8 +117,13 @@ export class SignupPage {
     this._tokenService
       .registerAccount(credentials)
       .subscribe(
-        res => (this.currentUser = res.json().data),
+        res => {
+          (this.currentUser = res.json().data)
+          this.showAlert();
+          this.event.publish('userSignedUp', this.currentUser);
+          this.slides.slideTo(1, 500);        },
         err => console.error('error')
       );
   }
+
 }
