@@ -24,42 +24,39 @@
     </ion-slide>
 
     <ion-slide style="background-color:white;">
-        <h2>Where are you based?</h2>
+      <h2>Where are you based?</h2>
 
       <ion-select>
         <ion-option *ngFor="let cc of locations" value="{{ cc }}">
-          <span class='flag-icon flag-icon-gb {{ cc.slice(0, -1) }}'></span>
-            {{ cc }}
+          <span class='flag-icon flag-icon-gb {{ cc.slice(0, -1) }}'></span> {{ cc }}
         </ion-option>
       </ion-select>
       <p>
-        <button ion-button color="next" round>NEXT</button>
+        <button ion-button (click)="goToSlide(2)" *ngIf="!currentUser" color="next" round>NEXT</button>
       </p>
     </ion-slide>
 
     <ion-slide style="background-color:white;">
       <h4>What is your native language?</h4>
       <ion-item>
-      <ion-select [(ngModel)]= 'nativeLanguage'>
-        <ion-option *ngFor="let ciao of languages" value="{{ ciao }}">
-          <span class='flag-icon flag-icon-gb {{ ciao.slice(0, -1) }}'></span>
-            {{ ciao }}
-        </ion-option>
-      </ion-select>
-    </ion-item>
+        <ion-select [(ngModel)]='nativeLanguage'>
+          <ion-option *ngFor="let ciao of languages" value="{{ ciao }}">
+            <span class='flag-icon flag-icon-gb {{ ciao.slice(0, -1) }}'></span> {{ ciao }}
+          </ion-option>
+        </ion-select>
+      </ion-item>
 
       <h4>Which language do you want to learn?</h4>
       <ion-item>
-        <ion-select [(ngModel)]= 'learnLanguage'>
-        <ion-option *ngFor="let cc of learnings" value="{{ cc }}">
-          <span class='flag-icon flag-icon-{{ cc.slice(0, -1) }}'></span>
-          {{ cc }}
-        </ion-option>
-      </ion-select>
-    </ion-item>
-    <p>
-      <button ion-button color="next" round>NEXT</button>
-    </p>
+        <ion-select [(ngModel)]='learnLanguage'>
+          <ion-option *ngFor="let cc of learnings" value="{{ cc }}">
+            <span class='flag-icon flag-icon-{{ cc.slice(0, -1) }}'></span> {{ cc }}
+          </ion-option>
+        </ion-select>
+      </ion-item>
+      <p>
+        <button ion-button (click)="goToSlide(3)" *ngIf="!currentUser" color="next" round>NEXT</button>
+      </p>
     </ion-slide>
     <ion-slide style="background-color:white;">
       <h4>What's your age?</h4>
@@ -69,15 +66,15 @@
       </ion-range>
 
       <h4>And gender?</h4>
-        <ion-list>
-          <ion-item>
-            <ion-select [(ngModel)]="gender">
-              <ion-option value="female">Female</ion-option>
-              <ion-option value="male">Male</ion-option>
-            </ion-select>
-            </ion-item>
-        </ion-list>
-        <button ion-button color="next" (click)="goToHome()" round>DONE!</button>
-      </ion-slide>
+      <ion-list>
+        <ion-item>
+          <ion-select [(ngModel)]="gender">
+            <ion-option value="female">Female</ion-option>
+            <ion-option value="male">Male</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+      <button ion-button color="next" (click)="goToHome()" round>DONE!</button>
+    </ion-slide>
   </ion-slides>
 </ion-content>

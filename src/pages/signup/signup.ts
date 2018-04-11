@@ -191,4 +191,8 @@ export class SignupPage {
         alert.present();
     }
   }
+
+  goToSlide(n) {
+    this.slides.slideTo(n, 500);
+  }
 }

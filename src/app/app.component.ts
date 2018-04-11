@@ -86,49 +86,6 @@ export class MyApp {
     this.loader.present();
   }
 
-  loginPopUp() {
-    console.log('popup');
-    let confirm = this.alertCtrl.create({
-
-      title: 'Login',
-      inputs: [
-        {
-          name: 'email',
-          placeholder: 'email'
-        },
-        {
-          name: 'password',
-          placeholder: 'password',
-          type: 'password'
-        }
-      ],
-      buttons: [
-        {
-          text: 'Cancel',
-          handler: data => {
-            console.log('Cancel clicked');
-          }
-        },
-        {
-          text: 'Login',
-          handler: data => {
-            this.login(data);
-          }
-        }
-      ]
-    });
-    confirm.present();
-  }
-
-  login(credentials) {
-    this._tokenService
-      .signIn(credentials)
-      .subscribe(
-        res => (this.currentUser = res.json().data),
-        err => console.error('error')
-      );
-  }
-
   logout() {
     this._tokenService
       .signOut()
