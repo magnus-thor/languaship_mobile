@@ -120,7 +120,7 @@ export class SignupPage {
           (this.currentUser = res.json().data)
           this.showAlert();
           this.event.publish('userSignedUp', this.currentUser);
-          this.slides.slideTo(2, 500);        },
+          this.slides.slideTo(1, 500);        },
         err => console.error('error')
       );
   }
