@@ -1,16 +1,18 @@
 <ion-header>
   <ion-navbar>
     <ion-title>SIGN UP</ion-title>
+    <!-- <ion-card>
+      <img src="assets/imgs/languaship2.png"/>
+    </ion-card> -->
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <img src="assets/imgs/logo.png"/>
-  </ion-card>
+
+
   <ion-slides pager>
-    <ion-slide style="background-color:white">
-      <h4>CREATE A NEW ACCOUNT</h4>
+<ion-slide>
+    <h4>CREATE A NEW ACCOUNT</h4>
       <div class="list">
         <label class="item item-input item-stacked-label">
           <span class="input-label">Email</span>
@@ -30,7 +32,7 @@
       </div>
     </ion-slide>
 
-    <ion-slide style="background-color:white;">
+    <ion-slide style="background-image: url('https://frontnews.eu/contents/news/19005/images/resize_w3L8iXyG47RlejaTfFmzBtZqhHpgWd0J_980x590.jpg')">
         <h2>Where are you based?</h2>
 
       <ion-select>
@@ -44,7 +46,7 @@
       </p>
     </ion-slide>
 
-    <ion-slide style="background-color:white;">
+    <ion-slide style="background-image: url('https://frontnews.eu/contents/news/19005/images/resize_w3L8iXyG47RlejaTfFmzBtZqhHpgWd0J_980x590.jpg')">
       <h4>What is your native language?</h4>
       <ion-item>
       <ion-select [(ngModel)]= 'nativeLanguage'>
