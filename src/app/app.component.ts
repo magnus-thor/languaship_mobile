@@ -47,7 +47,6 @@ export class MyApp {
 
     this.pages = [
       { title: 'Home', component: HomePage },
-      // { title: 'Signup', component: SignupPage },
       { title: 'Profile', component: ProfilePage },
       { title: 'Chat', component: ChatPage },
       { title: 'Settings', component: SettingsPage }
