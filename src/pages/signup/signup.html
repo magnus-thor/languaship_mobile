@@ -9,14 +9,17 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <img src="assets/imgs/logo.png"/>
-  </ion-card>
   <ion-slides pager="true">
     <ion-slide style="background-color:white">
+      <h1>Welcome to Languaship!</h1>
       <h4>CREATE A NEW ACCOUNT</h4>
       <p>
         <button ion-button (click)="registerAccountPopUp()" *ngIf="!currentUser" color="next" round>SIGN UP</button>
+      </p>
+      <h4>Already have an account?</h4>
+      <h5> Log in here</h5>
+      <p>
+        <button ion-button (click)="loginPopUp()" *ngIf="!currentUser" color="next" round>LOG IN</button>
       </p>
     </ion-slide>
 

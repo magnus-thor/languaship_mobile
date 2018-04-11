@@ -125,18 +125,70 @@ export class SignupPage {
           (this.currentUser = res.json().data)
           this.showAlert();
           this.event.publish('userSignedUp', this.currentUser);
-          // this.storage.set('signedUp', true);
           this.slides.slideTo(1, 500);        },
         err => console.error('error')
       );
   }
 
+  loginPopUp() {
+    console.log('popup');
+    let confirm = this.alertCtrl.create({
 
-  // Function that gets run when user presses done
-
-  goToHome() {
-    this.navCtrl.setRoot(HomePage);
+      title: 'Login',
+      inputs: [
+        {
+          name: 'email',
+          placeholder: 'email'
+        },
+        {
+          name: 'password',
+          placeholder: 'password',
+          type: 'password'
+        }
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Login',
+          handler: data => {
+            this.login(data);
+          }
+        }
+      ]
+    });
+    confirm.present();
   }
 
+  login(credentials) {
+    this._tokenService
+      .signIn(credentials)
+      .subscribe(
+        res => {
+          (this.currentUser = res.json().data),
+          this.showAlert();
+          this.event.publish('userSignedUp', this.currentUser);
+          this.goToHome();
+        },
+          err => console.error('error')
+      );
+  }
 
+  goToHome() {
+    if (this.currentUser){
+      this.navCtrl.setRoot(HomePage);
+    }
+    else {
+      let alert = this.alertCtrl.create({
+        title: 'Log in please',
+        subTitle: 'You need to be logged in!',
+        buttons: ['Ok']
+      });
+        alert.present();
+    }
+  }
 }

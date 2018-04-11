@@ -9,7 +9,6 @@ import { ChatPage } from '../pages/chat/chat';
 import { SettingsPage } from '../pages/settings/settings';
 import { Angular2TokenService } from 'angular2-token';
 import { AlertController } from 'ionic-angular';
-// import { Storage } from '@ionic/storage'
 import { LoadingController } from "ionic-angular";
 
 @Component({
@@ -49,7 +48,7 @@ export class MyApp {
 
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'Signup', component: SignupPage },
+      // { title: 'Signup', component: SignupPage },
       { title: 'Profile', component: ProfilePage },
       { title: 'Chat', component: ChatPage },
       { title: 'Settings', component: SettingsPage }
@@ -86,7 +85,6 @@ export class MyApp {
 
     this.loader.present();
   }
-
 
   loginPopUp() {
     console.log('popup');
