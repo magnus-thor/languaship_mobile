@@ -19,6 +19,7 @@ export class UsersProvider {
           languages: [
             {
               name: "English",
+              learn: "German",
               isoCode: "ENG",
               proficiency: "native"
             }
@@ -34,6 +35,7 @@ export class UsersProvider {
           languages: [
             {
               name: "Italian",
+              learn: "Swedish",
               isoCode: "ITA",
               proficiency: "native"
             }
@@ -49,6 +51,7 @@ export class UsersProvider {
           languages: [
             {
               name: "French",
+              learn: "Spanish",
               isoCode: "FR",
               proficiency: "native"
             }
