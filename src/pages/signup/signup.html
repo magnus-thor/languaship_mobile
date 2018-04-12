@@ -7,20 +7,20 @@
 <ion-content>
   <ion-slides pager="true">
     <ion-slide style="background-image: url('https://frontnews.eu/contents/news/19005/images/resize_w3L8iXyG47RlejaTfFmzBtZqhHpgWd0J_980x590.jpg')">
-        <h1>Welcome to Languaship!</h1>
+        <h1>WELCOME TO LANGUASHIP</h1>
       <h4>CREATE A NEW ACCOUNT</h4>
       <p>
         <button ion-button (click)="registerAccountPopUp()" *ngIf="!currentUser" color="next" round>SIGN UP</button>
       </p>
-      <h4>Already have an account?</h4>
-      <h5> Log in here</h5>
+      <h5>ALREADY HAVE AN ACCOUNT?
+      LOG IN HERE</h5>
       <p>
         <button ion-button (click)="loginPopUp()" *ngIf="!currentUser" color="next" round>LOG IN</button>
       </p>
     </ion-slide>
 
     <ion-slide style="background-image: url('https://frontnews.eu/contents/news/19005/images/resize_w3L8iXyG47RlejaTfFmzBtZqhHpgWd0J_980x590.jpg')">
-      <h2>Where are you based?</h2>
+      <h2>WHERE ARE YOU BASED?</h2>
       <ion-select>
         <ion-option *ngFor="let cc of locations" value="{{ cc }}">
           <span class='flag-icon flag-icon-gb {{ cc.slice(0, -1) }}'></span> {{ cc }}
@@ -32,7 +32,7 @@
     </ion-slide>
 
     <ion-slide style="background-image: url('https://frontnews.eu/contents/news/19005/images/resize_w3L8iXyG47RlejaTfFmzBtZqhHpgWd0J_980x590.jpg')">
-      <h4>What is your native language?</h4>
+      <h4>WHAT IS YOUR NATIVE LANGUAGE?</h4>
       <ion-item>
         <ion-select [(ngModel)]='nativeLanguage'>
           <ion-option *ngFor="let ciao of languages" value="{{ ciao }}">
@@ -41,7 +41,7 @@
         </ion-select>
       </ion-item>
 
-      <h4>Which language do you want to learn?</h4>
+      <h4>WHICH LANGUAGE DO YOU WANT TO LEARN?</h4>
       <ion-item>
         <ion-select [(ngModel)]='learnLanguage'>
           <ion-option *ngFor="let cc of learnings" value="{{ cc }}">
@@ -54,7 +54,7 @@
       </p>
     </ion-slide>
     <ion-slide style="background-image: url('https://frontnews.eu/contents/news/19005/images/resize_w3L8iXyG47RlejaTfFmzBtZqhHpgWd0J_980x590.jpg')">
-      <h4>What's your age?</h4>
+      <h4>WHAT'S YOUR AGE?</h4>
       <ion-label>
         <ion-badge *ngIf="this.age"> {{this.age}}</ion-badge>
       </ion-label>
@@ -63,7 +63,7 @@
         <ion-label range-right>99</ion-label>
       </ion-range>
 
-      <h4>And gender?</h4>
+      <h4>AND GENDER?</h4>
       <ion-list>
         <ion-item>
           <ion-select [(ngModel)]="gender">
