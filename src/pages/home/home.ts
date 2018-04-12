@@ -8,7 +8,7 @@ import { UsersProvider } from '../../providers/users/users';
 })
 export class HomePage {
 
-  users: any
+  users: any;
 
 
   // constructor(public navCtrl: NavController) {
