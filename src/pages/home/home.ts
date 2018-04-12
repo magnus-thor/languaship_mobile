@@ -16,16 +16,22 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, private usersProvider: UsersProvider) {
 
-    this.users = usersProvider.getAll();
-//     this.users = this.getUsers();
+    // this.users = usersProvider.getAll();
+    this.users = this.getUsers();
 //
 
 }
 //
-//   getUsers(): void{
-//     this.usersProvider.getAll()
-//     .subscribe(users =>{
-//     this.users = users
-//     })
+  getUsers(): void{
+    this.usersProvider.getAll()
+    .subscribe(users =>{
+    this.users = users
+    })
   }
-// }
+
+  ionViewDidLoad() {
+    this.usersProvider
+      .getAll()
+      .subscribe(data => (this.users = data.entries));
+  }
+}

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
+import { Angular2TokenService } from 'angular2-token';
 import 'rxjs/add/operator/map';
 
 @Injectable()
@@ -9,12 +10,13 @@ export class UsersProvider {
   public gender: string;
   public age: number;
 
-  constructor(private http: Http) {}
+  constructor(private http: Http, private _tokenService: Angular2TokenService) {}
 
   getAll() {
-    return this.http.get(this.apiUrl+'/v1/users' )
-                    .map((response: Response) => response.json())
-  }
+    return this._tokenService
+    .get('users')
+    .map(users => users.json());
+}
 
     //   {
     //     id: 1, type: "users", attributes: {
