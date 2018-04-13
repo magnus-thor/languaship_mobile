@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
-import {UsersProvider} from '../../providers/users/users';
+import { Component } from '@angular/core';
+import { NavController } from 'ionic-angular';
+import { UsersProvider } from '../../providers/users/users';
 
 @Component({
   selector: 'page-home',
@@ -9,6 +9,10 @@ import {UsersProvider} from '../../providers/users/users';
 export class HomePage {
 
   users: any;
+
+
+
+  // constructor(public navCtrl: NavController) {
 
 
   constructor(public navCtrl: NavController, private usersProvider: UsersProvider) {
@@ -26,3 +30,5 @@ export class HomePage {
     console.log(this.users)
   }
 }
+
+

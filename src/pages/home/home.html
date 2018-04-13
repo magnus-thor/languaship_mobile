@@ -9,9 +9,8 @@
 
 <ion-content padding>
 
-
   <h1>
-    Welcome to Languaship!
+    WELCOME TO LANGUASHIP
   </h1>
 
   <ion-card *ngFor="let user of this.users">
@@ -24,7 +23,11 @@
           {{ user.attributes.city }},
           {{ user.attributes.age }}
         </p>
-        <h2> {{ user.attributes.languages[0].name }} </h2>
+        <h3> Native: {{ user.attributes.languages[0].name }} </h3>
+        <h3> Want to learn: {{ user.attributes.languages[0].learn }} </h3>
       </ion-card-content>
+      <p>
+        <button ion-button class="message" color="next" round>SEND MESSAGE</button>
+      </p>
   </ion-card>
 </ion-content>

@@ -6,9 +6,6 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class UsersProvider {
-  // private apiUrl: string = 'https://languaship.herokuapp.com/api/v1'
-  // public gender: string;
-  // public age: number;
 
   constructor(private http: Http, private _tokenService: Angular2TokenService) {
   }
@@ -28,6 +25,7 @@ export class UsersProvider {
   //       languages: [
   //         {
   //           name: "English",
+  //           learn: "German",
   //           isoCode: "ENG",
   //           proficiency: "native"
   //         }
@@ -43,6 +41,7 @@ export class UsersProvider {
   //       languages: [
   //         {
   //           name: "Italian",
+  //           learn: "Swedish",
   //           isoCode: "ITA",
   //           proficiency: "native"
   //         }
@@ -58,6 +57,7 @@ export class UsersProvider {
   //       languages: [
   //         {
   //           name: "French",
+  //           learn: "Spanish",
   //           isoCode: "FR",
   //           proficiency: "native"
   //         }
