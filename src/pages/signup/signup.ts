@@ -24,8 +24,6 @@ export class SignupPage {
   currentUser: any
   age: any
 
-
-
   constructor(
     private viewCtrl: ViewController,
     public navCtrl: NavController,
@@ -73,7 +71,7 @@ export class SignupPage {
 
   showAlert() {
   let alert = this.alertCtrl.create({
-    title: 'Success',
+    title: 'Hooray!',
     subTitle: 'Successful action',
     buttons: ['Ok']
   });
