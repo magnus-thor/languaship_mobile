@@ -36,7 +36,8 @@ export class MyApp {
   ) {
 
     this._tokenService.init({
-      apiBase: 'https://languaship.herokuapp.com/api/v1'
+      // apiBase: 'https://languaship.herokuapp.com/api/v1'
+      apiBase: 'http://localhost:3000/api/v1'
   });
 
     this.event.subscribe('userSignedUp', (user) => {
