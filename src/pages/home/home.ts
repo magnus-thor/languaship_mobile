@@ -16,6 +16,7 @@ export class HomePage {
   ionViewDidLoad() {
     this.usersProvider.getAll().subscribe(({data}) => {
       this.users = data;
+      debugger;
     });
   }
 }
