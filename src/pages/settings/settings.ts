@@ -18,17 +18,17 @@ export class SettingsPage {
     console.log('ionViewDidLoad SettingsPage');
   }
 
-  goToHome() {
-    if (this.currentUser){
-      this.navCtrl.setRoot(HomePage);
-    }
-    else {
-      let alert = this.alertCtrl.create({
-        title: 'Log in please',
-        subTitle: 'You need to be logged in!',
-        buttons: ['Ok']
-      });
-        alert.present();
-    }
-  }
+  // goToHome() {
+  //   if (this.currentUser){
+  //     this.navCtrl.setRoot(HomePage);
+  //   }
+  //   else {
+  //     let alert = this.alertCtrl.create({
+  //       title: 'Log in please',
+  //       subTitle: 'You need to be logged in!',
+  //       buttons: ['Ok']
+  //     });
+  //       alert.present();
+  //   }
+  // }
 }

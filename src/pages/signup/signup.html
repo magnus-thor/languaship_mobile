@@ -15,11 +15,8 @@
       <p>
         <button ion-button (click)="registerAccountPopUp()" *ngIf="!currentUser" color="next" round>SIGN UP</button>
       </p>
-      <h5>ALREADY HAVE AN ACCOUNT?
-      LOG IN HERE</h5>
-      <p>
-        <button ion-button (click)="loginPopUp()" *ngIf="!currentUser" color="next" round>LOG IN</button>
-      </p>
+      <h5>ALREADY HAVE AN ACCOUNT?LOG IN HERE</h5>
+      <button ion-button (click)="loginPopUp()" *ngIf="!currentUser" color="next" round>LOG IN</button>
     </ion-slide>
 
     <ion-slide style="background-image: url('https://frontnews.eu/contents/news/19005/images/resize_w3L8iXyG47RlejaTfFmzBtZqhHpgWd0J_980x590.jpg')">
@@ -30,12 +27,12 @@
         </ion-option>
       </ion-select>
       <p>
-        <button ion-button (click)="goToSlide(2)" *ngIf="!currentUser" color="next" round>NEXT</button>
+        <button ion-button (click)="goToSlide(2)" color="next" round>NEXT</button>
       </p>
     </ion-slide>
 
     <ion-slide style="background-image: url('https://frontnews.eu/contents/news/19005/images/resize_w3L8iXyG47RlejaTfFmzBtZqhHpgWd0J_980x590.jpg')">
-      <h4>WHAT IS YOUR NATIVE LANGUAGE?</h4>
+      <h5>WHAT IS YOUR NATIVE LANGUAGE?</h5>
       <ion-item>
         <ion-select [(ngModel)]='nativeLanguage'>
           <ion-option *ngFor="let ciao of languages" value="{{ ciao }}">
@@ -44,7 +41,7 @@
         </ion-select>
       </ion-item>
 
-      <h4>WHICH LANGUAGE DO YOU WANT TO LEARN?</h4>
+      <h5>WHICH LANGUAGE DO YOU WANT TO LEARN?</h5>
       <ion-item>
         <ion-select [(ngModel)]='learnLanguage'>
           <ion-option *ngFor="let cc of learnings" value="{{ cc }}">
@@ -53,7 +50,7 @@
         </ion-select>
       </ion-item>
       <p>
-        <button ion-button (click)="goToSlide(3)" *ngIf="!currentUser" color="next" round>NEXT</button>
+        <button ion-button (click)="goToSlide(3)" color="next" round>NEXT</button>
       </p>
     </ion-slide>
     <ion-slide style="background-image: url('https://frontnews.eu/contents/news/19005/images/resize_w3L8iXyG47RlejaTfFmzBtZqhHpgWd0J_980x590.jpg')">
