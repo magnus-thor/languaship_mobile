@@ -168,7 +168,7 @@ export class SignupPage {
       .signIn(credentials)
       .subscribe(
         res => {
-          (this.currentUser = res.json().data),
+          this.currentUser = res.json().data,
           this.showAlert();
           this.event.publish('userSignedUp', this.currentUser);
           this.goToHome();
@@ -179,7 +179,6 @@ export class SignupPage {
 
   goToHome() {
     if (this.currentUser){
-
       this.navCtrl.setRoot(HomePage);
     }
     else {

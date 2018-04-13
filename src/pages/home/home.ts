@@ -13,13 +13,8 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, private usersProvider: UsersProvider) {}
 
-
-
   ionViewDidLoad() {
-    this.usersProvider.getAll().subscribe(({data}) => {
-      this.users = data;
-      debugger;
-    });
+    this.usersProvider.getAll().subscribe(({data}) => (this.users = data))
   }
 }
 
