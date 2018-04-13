@@ -16,8 +16,10 @@ export class SignupPage {
   @ViewChild(Nav) nav: Nav;
   @ViewChild(Slides) slides: Slides;
 
+
   pages: Array<{title: string, component: any}>;
   currentUser: any;
+  age: any;
   locations;
   languages;
   learnings;
@@ -132,7 +134,8 @@ export class SignupPage {
           (this.currentUser = res.json().data)
           this.showAlert();
           this.event.publish('userSignedUp', this.currentUser);
-          this.slides.slideTo(1, 500);        },
+          this.slides.slideTo(1, 500);
+          },
         err => console.error('error')
       );
   }
@@ -176,7 +179,7 @@ export class SignupPage {
       .signIn(credentials)
       .subscribe(
         res => {
-          (this.currentUser = res.json().data),
+          this.currentUser = res.json().data,
           this.showAlert();
           this.event.publish('userSignedUp', this.currentUser);
           this.goToHome();
@@ -188,7 +191,7 @@ export class SignupPage {
   goToHome() {
     if (this.currentUser){
       this.usersProvider
-        .saveProfile({ user_profile: { data: { message: this.profile } } })
+        .saveProfile({ user_profile: { message: this.profile } })
         .subscribe(data => console.log(data));
       this.navCtrl.setRoot(HomePage);
     }
