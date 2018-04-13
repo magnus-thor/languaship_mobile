@@ -18,8 +18,8 @@ export class UsersProvider {
           profileImage: "http://cdn2.ubergizmo.com/wp-content/uploads/2016/02/homer-simpson.jpeg",
           languages: [
             {
-              name: "English",
-              learn: "German",
+              name: "Swedish",
+              learn: "English",
               isoCode: "ENG",
               proficiency: "native"
             }
@@ -34,8 +34,8 @@ export class UsersProvider {
           profileImage: "https://www.techprincess.it/wp-content/uploads/2018/03/TechPrincess_MAR10Day_festeggiamenti-382x420.jpg",
           languages: [
             {
-              name: "Italian",
-              learn: "Swedish",
+              name: "Swedish",
+              learn: "English",
               isoCode: "ITA",
               proficiency: "native"
             }
@@ -50,8 +50,8 @@ export class UsersProvider {
           profileImage: "http://www.asterix.com/imgs/perso3-3.png",
           languages: [
             {
-              name: "French",
-              learn: "Spanish",
+              name: "Swedish",
+              learn: "English",
               isoCode: "FR",
               proficiency: "native"
             }

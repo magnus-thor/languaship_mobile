@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, ViewController, Nav, Events, Slide
 import { AlertController } from 'ionic-angular';
 import { Angular2TokenService } from 'angular2-token';
 import { HomePage } from '../home/home'
+import { UsersProvider } from "../../providers/users/users";
 
 
 @IonicPage()
@@ -29,7 +30,8 @@ export class SignupPage {
     public navParams: NavParams,
     private _tokenService: Angular2TokenService,
     private alertCtrl: AlertController,
-    private event: Events
+    private event: Events,
+    private usersProvider: UsersProvider
   ) {
       this.profile = {
         age: 20,
@@ -77,7 +79,7 @@ export class SignupPage {
 
   showAlert() {
   let alert = this.alertCtrl.create({
-    title: 'Success',
+    title: 'Hooray!',
     subTitle: 'Successful action',
     buttons: ['Ok']
   });
@@ -186,6 +188,7 @@ export class SignupPage {
   goToHome() {
     if (this.currentUser){
       console.log(this.profile);
+      this.usersProvider.saveProfile
       this.navCtrl.setRoot(HomePage);
     }
     else {
