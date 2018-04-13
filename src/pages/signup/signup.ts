@@ -15,15 +15,12 @@ export class SignupPage {
   @ViewChild(Nav) nav: Nav;
   @ViewChild(Slides) slides: Slides;
 
-  locations: any
-  languages: any
-  learnings: any
-  nativeLanguage: any
-  learnLanguage: any
   pages: Array<{title: string, component: any}>;
-  currentUser: any
-  age: any
-
+  currentUser: any;
+  locations;
+  languages;
+  learnings;
+  profile;
 
 
   constructor(
@@ -34,7 +31,14 @@ export class SignupPage {
     private alertCtrl: AlertController,
     private event: Events
   ) {
-      this.age = 20;
+      this.profile = {
+        age: 20,
+      gender: 'Female',
+      name: '',
+      nativeLanguage: 'Swedish',
+      learnLanguage: 'English',
+      location: 'Stockholm',
+        }
       this.locations = [
               'STOCKHOLM',
               'GOTHENBURG',
@@ -181,6 +185,7 @@ export class SignupPage {
 
   goToHome() {
     if (this.currentUser){
+      console.log(this.profile);
       this.navCtrl.setRoot(HomePage);
     }
     else {

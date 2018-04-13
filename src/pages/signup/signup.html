@@ -21,7 +21,7 @@
 
     <ion-slide style="background-image: url('https://frontnews.eu/contents/news/19005/images/resize_w3L8iXyG47RlejaTfFmzBtZqhHpgWd0J_980x590.jpg')">
       <h2>WHERE ARE YOU BASED?</h2>
-      <ion-select>
+      <ion-select [(ngModel)]="profile.location">
         <ion-option *ngFor="let cc of locations" value="{{ cc }}">
           <span class='flag-icon flag-icon-gb {{ cc.slice(0, -1) }}'></span> {{ cc }}
         </ion-option>
@@ -34,7 +34,7 @@
     <ion-slide style="background-image: url('https://frontnews.eu/contents/news/19005/images/resize_w3L8iXyG47RlejaTfFmzBtZqhHpgWd0J_980x590.jpg')">
       <h4>WHAT IS YOUR NATIVE LANGUAGE?</h4>
       <ion-item>
-        <ion-select [(ngModel)]='nativeLanguage'>
+        <ion-select [(ngModel)]='profile.nativeLanguage'>
           <ion-option *ngFor="let ciao of languages" value="{{ ciao }}">
             <span class='flag-icon flag-icon-gb {{ ciao.slice(0, -1) }}'></span> {{ ciao }}
           </ion-option>
@@ -43,7 +43,7 @@
 
       <h4>WHICH LANGUAGE DO YOU WANT TO LEARN?</h4>
       <ion-item>
-        <ion-select [(ngModel)]='learnLanguage'>
+        <ion-select [(ngModel)]='profile.learnLanguage'>
           <ion-option *ngFor="let cc of learnings" value="{{ cc }}">
             <span class='flag-icon flag-icon-{{ cc.slice(0, -1) }}'></span> {{ cc }}
           </ion-option>
@@ -58,7 +58,7 @@
       <ion-label>
         <ion-badge *ngIf="this.age"> {{this.age}}</ion-badge>
       </ion-label>
-      <ion-range min="18" max="99" [(ngModel)]="age" color="secondary">
+      <ion-range min="18" max="99" [(ngModel)]="profile.age" color="secondary">
         <ion-label range-left>18</ion-label>
         <ion-label range-right>99</ion-label>
       </ion-range>
@@ -66,7 +66,7 @@
       <h4>AND GENDER?</h4>
       <ion-list>
         <ion-item>
-          <ion-select [(ngModel)]="gender">
+          <ion-select [(ngModel)]="profile.gender">
             <ion-option value="female">Female</ion-option>
             <ion-option value="male">Male</ion-option>
           </ion-select>
