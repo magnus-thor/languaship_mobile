@@ -187,8 +187,9 @@ export class SignupPage {
 
   goToHome() {
     if (this.currentUser){
-      console.log(this.profile);
-      this.usersProvider.saveProfile
+      this.usersProvider
+        .saveProfile({ user_profile: { data: { message: this.profile } } })
+        .subscribe(data => console.log(data));
       this.navCtrl.setRoot(HomePage);
     }
     else {

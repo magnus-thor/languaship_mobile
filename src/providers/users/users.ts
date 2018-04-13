@@ -1,11 +1,11 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Angular2TokenService } from "angular2-token";
 
 
 @Injectable()
 export class UsersProvider {
 
-  constructor() {
+  constructor(private _tokenService: Angular2TokenService) {
   }
 
   getAll() {
@@ -59,5 +59,10 @@ export class UsersProvider {
         }
       },
     ];
+  }
+
+  saveProfile(profile) {
+    console.log(profile);
+    return this._tokenService.post('user', profile).map(profile => profile)
   }
 }
