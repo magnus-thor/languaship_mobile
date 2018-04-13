@@ -15,14 +15,14 @@ export class SignupPage {
   @ViewChild(Nav) nav: Nav;
   @ViewChild(Slides) slides: Slides;
 
-  locations: any
-  languages: any
-  learnings: any
-  nativeLanguage: any
-  learnLanguage: any
+  locations: any;
+  languages: any;
+  learnings: any;
+  nativeLanguage: any;
+  learnLanguage: any;
   pages: Array<{title: string, component: any}>;
-  currentUser: any
-  age: any
+  currentUser: any;
+  age: any;
 
 
 
@@ -181,6 +181,7 @@ export class SignupPage {
 
   goToHome() {
     if (this.currentUser){
+
       this.navCtrl.setRoot(HomePage);
     }
     else {
