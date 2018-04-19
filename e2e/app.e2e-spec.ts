@@ -1,4 +1,5 @@
 import { Page } from './app.po';
+import {SignupPage} from "../src/pages/signup/signup";
 describe('App', () => {
   let page: Page;
   beforeEach(() => {
@@ -10,9 +11,9 @@ describe('App', () => {
       page.navigateTo('/');
     });
 
-    it('should have a title saying Home', () => {
-      page.getHomeTitleText().then(title => {
-        expect(title).toEqual('Home');
+    xit('should have a title saying SignupPage', () => {
+      page.getPageTitleText().then(title => {
+        expect(title).toEqual('SIGN UP');
       });
     });
   });
