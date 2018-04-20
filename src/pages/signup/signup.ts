@@ -79,7 +79,6 @@ export class SignupPage {
   }
 
   registerAccountPopUp(){
-    console.log('popup');
     let confirm = this.alertCtrl.create({
       title: 'Signup',
       inputs: [

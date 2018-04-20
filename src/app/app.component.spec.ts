@@ -6,7 +6,7 @@ import {Http, BaseRequestOptions, RequestMethod} from "@angular/http";
 import {MockBackend} from "@angular/http/testing";
 import {Angular2TokenService} from "angular2-token";
 import {AlertController, LoadingController} from 'ionic-angular';
-import {AlertControllerMock, LoadingControllerMock} from 'ionic-mocks';
+import {AlertControllerMock, LoadingControllerMock, EventsMock} from 'ionic-mocks';
 
 import {
   PlatformMock,
@@ -17,13 +17,28 @@ import {MyApp} from './app.component';
 import {SignupPage} from "../pages/signup/signup";
 
 describe('AppComponent', () => {
-  let fixture, component;
+  let fixture, component, mockBackend, tokenService;
 
   let signInData = {
     email: 'test@test.com',
     password: 'password',
     userType: String
   };
+
+  let loginResponse = [{
+    'data': {
+    'id': 1,
+      'email': 'john@test.com',
+      'provider': 'email',
+      'uid': 'john@test.com',
+      'allow_password_change': false,
+      'name': 'john smith',
+      'nickname': 'johnny',
+      'image': 'none',
+      'gender': 'Male',
+      'age': 14,
+      'type': 'user'
+  }}];
 
   beforeEach(() => {
 
@@ -49,6 +64,7 @@ describe('AppComponent', () => {
         {provide: SplashScreen, useClass: SplashScreenMock},
         {provide: AlertController, useFactory: () => AlertControllerMock.instance()},
         {provide: LoadingController, useFactory: () => LoadingControllerMock.instance()},
+        {provide: Event, useFactory: () => EventsMock.instance()},
         Angular2TokenService
       ]
     });
@@ -56,6 +72,11 @@ describe('AppComponent', () => {
     fixture = TestBed.createComponent(MyApp);
     component = fixture.componentInstance;
   });
+
+  beforeEach(inject([Angular2TokenService, MockBackend], (_tokenService, _mockBackend) => {
+    tokenService = _tokenService;
+    mockBackend = _mockBackend;
+  }));
 
   it('should create the app', () => {
     expect(component).toBeTruthy();
@@ -69,20 +90,24 @@ describe('AppComponent', () => {
     expect(component.pages.length).toBe(4);
   });
 
-  it('login method', inject([Angular2TokenService, MockBackend], (tokenService, mockBackend) => {
+  it('login method', inject([AlertController], (alertCtrl) => {
 
     mockBackend.connections.subscribe(
       c => {
         expect(c.request.getBody()).toEqual(JSON.stringify(signInData));
         expect(c.request.method).toEqual(RequestMethod.Post);
         expect(c.request.url).toEqual('/auth/sign_in');
+        // c.mockRespond(new Response({
+        //   body: (loginResponse)
+        // }))
       }
     );
 
     component.login(signInData);
+    // expect(alertCtrl.create).toHaveBeenCalled();
   }));
 
-  it('signOut method', inject([Angular2TokenService, MockBackend], (tokenService, mockBackend) => {
+  it('signOut method', () => {
 
     mockBackend.connections.subscribe(
       c => {
@@ -92,16 +117,17 @@ describe('AppComponent', () => {
     );
 
     component.logout();
-  }));
+    expect(component.currentUser).toBe(undefined);
+  });
 
-  it('loginPopUp should call alert create', inject([Angular2TokenService, MockBackend, AlertController], (tokenService, mockBackend, alertCtrl) => {
+  it('loginPopUp should call alert create', inject([AlertController], (alertCtrl) => {
 
     component.loginPopUp();
 
     expect(alertCtrl.create).toHaveBeenCalled();
   }));
 
-  it('presentLoading should call loading controller', inject([Angular2TokenService, MockBackend, LoadingController], (tokenService, mockBackend, loader) => {
+  it('presentLoading should call loading controller', inject([LoadingController], (loader) => {
 
     component.presentLoading();
 
