@@ -116,11 +116,12 @@ export class SignupPage {
   }
 
   register(credentials) {
+    debugger;
     this._tokenService
       .registerAccount(credentials)
       .subscribe(
         res => {
-          (this.currentUser = res.json().data)
+          (this.currentUser = res.json().data);
           this.showAlert();
           this.event.publish('userSignedUp', this.currentUser);
           this.slides.slideTo(1, 500);        },
