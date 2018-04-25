@@ -41,8 +41,6 @@ describe('SignupPage', () => {
     email: 'test@test.com',
     password: 'password',
     passwordConfirmation: 'password',
-    // name: String,
-    // userType: String
   };
 
   let signupResponse = [{
@@ -59,6 +57,21 @@ describe('SignupPage', () => {
         'age': 14,
         'type': 'user'
   }}];
+
+  let loginResponse = [{
+    'data': {
+      'id': 1,
+      'email': 'john@test.com',
+      'provider': 'email',
+      'uid': 'john@test.com',
+      'allow_password_change': false,
+      'name': 'john smith',
+      'nickname': 'johnny',
+      'image': 'none',
+      'gender': 'Male',
+      'age': 14,
+      'type': 'user'
+    }}];
 
   beforeEach(() => {
 
@@ -112,7 +125,7 @@ describe('SignupPage', () => {
     expect(component).toBeTruthy();
   });
 
-  it('register method', () => {
+  it('register method', inject([AlertController, Slides], (alertCtrl, slides) => {
 
     mockBackend.connections.subscribe(
       c => {
@@ -124,29 +137,38 @@ describe('SignupPage', () => {
         }));
         expect(c.request.method).toEqual(RequestMethod.Post);
         expect(c.request.url).toEqual('/auth');
-        c.mockRespond(new Response({
-          body: (signupResponse)
-        }))
+        // c.mockRespond(new Response({
+        //   body: (signupResponse)
+        // }))
       }
     );
 
-    component.register(registerData)
-  });
+    component.register(registerData);
+    // expect(alertCtrl.create).toHaveBeenCalled();
+  }));
 
-  xit('login method', () => {
+  it('login method', inject([AlertController], (alertCtrl) => {
 
     mockBackend.connections.subscribe(
       c => {
         expect(c.request.getBody()).toEqual(JSON.stringify(signInData));
         expect(c.request.method).toEqual(RequestMethod.Post);
         expect(c.request.url).toEqual('/auth/sign_in');
-        // c.mockRespond(new Response({
-        //   body: (loginResponse)
-        // }))
+        c.mockRespond(new Response({
+          body: (loginResponse)
+        }))
       }
     );
 
     component.login(signInData);
-    // expect(alertCtrl.create).toHaveBeenCalled();
-  });
+    expect(alertCtrl.create).toHaveBeenCalled();
+  }));
+
+  it('showAlert should call alert create', inject([AlertController], (alertCtrl) => {
+
+    component.showAlert();
+
+    expect(alertCtrl.create).toHaveBeenCalled();
+  }));
+
 });

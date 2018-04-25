@@ -1,5 +1,7 @@
 import { Page } from './app.po';
-import {SignupPage} from "../src/pages/signup/signup";
+import { SignupPage }  from "../src/pages/signup/signup";
+import { browser } from "protractor";
+
 describe('App', () => {
   let page: Page;
   beforeEach(() => {
@@ -8,6 +10,7 @@ describe('App', () => {
 
   describe('default screen', () => {
     beforeEach(() => {
+      // browser.get('');
       page.navigateTo('/');
     });
 
@@ -15,6 +18,10 @@ describe('App', () => {
       page.getPageTitleText().then(title => {
         expect(title).toEqual('SIGN UP');
       });
+    });
+
+    it('should have a title', () => {
+      page.getTitle().then(title => expect(title).toEqual('SIGN UP'));
     });
   });
 });

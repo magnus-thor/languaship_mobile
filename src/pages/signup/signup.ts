@@ -116,7 +116,7 @@ export class SignupPage {
   }
 
   register(credentials) {
-    debugger;
+    // debugger;
     this._tokenService
       .registerAccount(credentials)
       .subscribe(

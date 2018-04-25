@@ -1,5 +1,7 @@
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Observable } from "rxjs/Observable";
+import 'rxjs/add/observable/of';
 
 export class PlatformMock {
   public ready(): Promise<string> {
@@ -39,6 +41,10 @@ export class PlatformMock {
 
   public onResize(callback: any) {
     return callback;
+  }
+
+  get resize(): Observable<any> {
+    return Observable.of(true);
   }
 
   public registerListener(ele: any, eventName: string, callback: any): Function {
