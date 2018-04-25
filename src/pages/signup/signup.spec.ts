@@ -137,14 +137,14 @@ describe('SignupPage', () => {
         }));
         expect(c.request.method).toEqual(RequestMethod.Post);
         expect(c.request.url).toEqual('/auth');
-        // c.mockRespond(new Response({
-        //   body: (signupResponse)
-        // }))
+        c.mockRespond(new Response({
+          body: (signupResponse)
+        }))
       }
     );
 
     component.register(registerData);
-    // expect(alertCtrl.create).toHaveBeenCalled();
+    expect(alertCtrl.create).toHaveBeenCalled();
   }));
 
   it('login method', inject([AlertController], (alertCtrl) => {
