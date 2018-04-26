@@ -14,14 +14,15 @@ describe('App', () => {
       page.navigateTo('/');
     });
 
-    xit('should have a title saying SignupPage', () => {
+    it('should have a title saying SignupPage', () => {
       page.getPageTitleText().then(title => {
+        debugger;
         expect(title).toEqual('SIGN UP');
       });
     });
 
     it('should have a title', () => {
-      page.getTitle().then(title => expect(title).toEqual('SIGN UP'));
+      page.getTitle().then(title => expect(title).toEqual('LanguaShip'));
     });
   });
 });

@@ -85,7 +85,8 @@ describe ('HomePage', () => {
         }))
       });
     component.ionViewDidLoad();
-    expect(component.users).toBe(responseMock)
+    fixture.detectChanges();
+    expect(component.users).toBe(1)
   });
 
 });

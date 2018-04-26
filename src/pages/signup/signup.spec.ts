@@ -18,7 +18,7 @@ import {
   ViewControllerMock, EventsMock,
   ConfigMock, SlidesMock
 } from "ionic-mocks";
-import {BaseRequestOptions, Http, RequestMethod} from "@angular/http";
+import {BaseRequestOptions, Http, RequestMethod, ResponseOptions} from "@angular/http";
 import {Angular2TokenService} from "angular2-token";
 
 import {
@@ -34,7 +34,10 @@ describe('SignupPage', () => {
   let signInData = {
     email: 'test@test.com',
     password: 'password',
-    // userType: String
+  };
+  let wrongSignInData = {
+    email: 'test@test.com',
+    password: '',
   };
 
   let registerData = {
@@ -127,6 +130,8 @@ describe('SignupPage', () => {
 
   it('register method', inject([AlertController, Slides], (alertCtrl, slides) => {
 
+    spyOn(component, 'goToSlide');
+
     mockBackend.connections.subscribe(
       c => {
         expect(c.request.getBody()).toEqual(JSON.stringify({
@@ -144,6 +149,7 @@ describe('SignupPage', () => {
     );
 
     component.register(registerData);
+    expect(component.goToSlide).toHaveBeenCalledWith(1);
     expect(alertCtrl.create).toHaveBeenCalled();
   }));
 
@@ -164,11 +170,35 @@ describe('SignupPage', () => {
     expect(alertCtrl.create).toHaveBeenCalled();
   }));
 
+  it('login method goes wrong', inject([AlertController], (alertCtrl) => {
+
+    mockBackend.connections.subscribe(
+      c => {
+        expect(c.request.getBody()).toEqual(JSON.stringify(wrongSignInData));
+        expect(c.request.method).toEqual(RequestMethod.Post);
+        expect(c.request.url).toEqual('/auth/sign_in');
+        c.mockError(new Response(
+          new ResponseOptions(
+            {status: 404})
+        ))
+      }
+    );
+
+    component.login(wrongSignInData);
+  }));
+
   it('showAlert should call alert create', inject([AlertController], (alertCtrl) => {
 
     component.showAlert();
 
     expect(alertCtrl.create).toHaveBeenCalled();
   }));
+
+  xit('goToSlide', inject([Slides], (slides) => {
+    spyOn(component, 'slides.slideTo');
+    component.goToSlide(1);
+
+    expect(component.slides.slideTo).toHaveBeenCalled()
+  }))
 
 });
