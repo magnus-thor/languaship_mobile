@@ -32,48 +32,48 @@ describe('SignupPage', () => {
   let fixture, component, mockBackend, tokenService;
 
   let signInData = {
-    email: 'test@test.com',
-    password: 'password',
+    email: "test@test.com",
+    password: "password",
   };
   let wrongSignInData = {
-    email: 'test@test.com',
-    password: '',
+    email: "test@test.com",
+    password: "",
   };
 
   let registerData = {
-    email: 'test@test.com',
-    password: 'password',
-    passwordConfirmation: 'password',
+    email: "test@test.com",
+    password: "password",
+    passwordConfirmation: "password",
   };
 
   let signupResponse = [{
-      'data': {
-        'id': 1,
-        'email': 'john@test.com',
-        'provider': 'email',
-        'uid': 'john@test.com',
-        'allow_password_change': false,
-        'name': 'john smith',
-        'nickname': 'johnny',
-        'image': 'none',
-        'gender': 'Male',
-        'age': 14,
-        'type': 'user'
+      "data": {
+        "id": 1,
+        "email": "john@test.com",
+        "provider": "email",
+        "uid": "john@test.com",
+        "allow_password_change": false,
+        "name": "john smith",
+        "nickname": "johnny",
+        "image": "none",
+        "gender": "Male",
+        "age": 14,
+        "type": "user"
   }}];
 
   let loginResponse = [{
-    'data': {
-      'id': 1,
-      'email': 'john@test.com',
-      'provider': 'email',
-      'uid': 'john@test.com',
-      'allow_password_change': false,
-      'name': 'john smith',
-      'nickname': 'johnny',
-      'image': 'none',
-      'gender': 'Male',
-      'age': 14,
-      'type': 'user'
+    "data": {
+      "id": 1,
+      "email": "john@test.com",
+      "provider": "email",
+      "uid": "john@test.com",
+      "allow_password_change": false,
+      "name": "john smith",
+      "nickname": "johnny",
+      "image": "none",
+      "gender": "Male",
+      "age": 14,
+      "type": "user"
     }}];
 
   beforeEach(() => {
