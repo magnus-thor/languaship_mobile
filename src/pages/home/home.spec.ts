@@ -81,7 +81,7 @@ describe ('HomePage', () => {
       c => {
         expect(c.request.method).toEqual(RequestMethod.Post)
         c.mockRespond(new Response({
-          body: (responseMock)
+          body: JSON.stringify(responseMock)
         }))
       });
     component.ionViewDidLoad();

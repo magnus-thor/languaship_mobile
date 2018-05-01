@@ -9,6 +9,6 @@ export class Page {
   }
 
  getPageTitleText() {
-    return element(by.tagName('ion-title')).getText();
-  }
+   return element(by.css('ion-navbar:first-child')).getText()
+ }
 }
